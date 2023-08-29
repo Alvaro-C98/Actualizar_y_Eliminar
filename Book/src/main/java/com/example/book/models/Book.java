@@ -22,7 +22,7 @@ public class Book {
     private Long id;
     @Size(min = 5, max = 200)
     private String title;
-    @Size(min = 5)
+    @Size(min = 5, max = 1000)
     @Column(columnDefinition="TEXT")
     private String description;
     @Size(min = 3, max = 40)

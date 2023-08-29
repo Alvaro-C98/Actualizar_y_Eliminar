@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+<meta charset="ISO-8859-1">
+<title>Show Book</title>
+</head>
+<body>
+	<h1>
+		<c:out value="${book.title}" />
+	</h1>
+	<p>
+		Description:
+		<c:out value="${book.description}" />
+	</p>
+	<p>
+		Language:
+		<c:out value="${book.language}" />
+	</p>
+	<p>
+		Number of pages:
+		<c:out value="${book.numberOfPages}" />
+	</p>
+	<a href="/books/${book.id}/edit"><button>Edit Book</button></a>
+	
+	<form action="/books/${book.id}" method="post">
+		<input type="hidden" name="_method" value="delete"> 
+		<input type="submit" value="Delete Book" class="mt-2">
+	</form>
+
+
+</body>
+</html>

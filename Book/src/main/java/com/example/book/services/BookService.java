@@ -44,6 +44,16 @@ public class BookService {
     	return bookRepository.save(temp);
     }
     
+    //Actualizar un libro
+    public Book updateBook(Book b) {
+    	Book temp = findBook(b.getId());
+    	temp.setDescription(b.getDescription());
+    	temp.setTitle(b.getTitle());
+    	temp.setNumberOfPages(b.getNumberOfPages());
+    	temp.setLanguage(b.getLanguage());
+    	return bookRepository.save(temp);
+    }
+    
     //Borrar un libro
     public void delete(long id) {
     	bookRepository.deleteById(id);
