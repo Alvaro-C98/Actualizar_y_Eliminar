@@ -74,7 +74,7 @@ public class BooksController {
         if (result.hasErrors()) {
             return "/books/edit.jsp";
         } else {
-            bookService.updateBook(book);
+            bookService.update(book);
             return "redirect:/books";
         }
     }

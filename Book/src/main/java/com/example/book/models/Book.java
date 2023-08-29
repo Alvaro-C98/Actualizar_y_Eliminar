@@ -13,6 +13,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 @Entity
 @Table(name="books")
@@ -27,7 +28,8 @@ public class Book {
     private String description;
     @Size(min = 3, max = 40)
     private String language;
-    @Min(100)
+    @NotNull
+    @Min(100) 
     private Integer numberOfPages;
     // Esto no permitirá que el campo createdAt sea modificado después de su creación.
     @Column(updatable=false)

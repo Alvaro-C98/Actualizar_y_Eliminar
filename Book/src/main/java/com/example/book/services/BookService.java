@@ -35,17 +35,7 @@ public class BookService {
 	 }
 	
     //Actualizar un libro
-    public Book update(long id, String title, String desc, String lang, int pages) {
-    	Book temp = findBook(id);
-    	temp.setDescription(desc);
-    	temp.setTitle(title);
-    	temp.setNumberOfPages(pages);
-    	temp.setLanguage(lang);
-    	return bookRepository.save(temp);
-    }
-    
-    //Actualizar un libro
-    public Book updateBook(Book b) {
+    public Book update(Book b) {
     	Book temp = findBook(b.getId());
     	temp.setDescription(b.getDescription());
     	temp.setTitle(b.getTitle());
